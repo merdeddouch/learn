@@ -48,7 +48,31 @@ public class Test {
         System.out.println(price);
 
 
+        // Case 1: String literals (automatically interned)
 
+        String string1 = "aa";
+        String string2 = "aa";
+
+        System.out.println("string1 == string2: " + (string1 == string2));       // true
+        System.out.println("string1.equals(string2): " + string1.equals(string2)); // true
+
+        // Case 2: New object
+        String string3 = new String("aa");
+        System.out.println("string1 == string3: " + (string1 == string3));       // false
+        System.out.println("string1.equals(string3): " + string1.equals(string3)); // true
+
+        // Case 3: Interned new object
+        String string4 = string3.intern();
+        System.out.println("string1 == string4: " + (string1 == string4));       // true
+        System.out.println("string1.equals(string4): " + string1.equals(string4)); // true
+
+        // Optional: Show identity hash codes (reference-based)
+        System.out.println("\nIdentity HashCodes:");
+        System.out.println("string1: " + System.identityHashCode(string1));
+        System.out.println("string2: " + System.identityHashCode(string2));
+        System.out.println("string3: " + System.identityHashCode(string3));
+        System.out.println("string4: " + System.identityHashCode(string4));
+        
     }
 
     
