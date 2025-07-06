@@ -73,6 +73,23 @@ public class Test {
         System.out.println("string3: " + System.identityHashCode(string3));
         System.out.println("string4: " + System.identityHashCode(string4));
         
+        // immutability of Srings Demo
+
+        String s = "   hi I am PrimO a Stoftware enginnier HHHHAhahha       ";
+
+        String sTrimed = s.trim(); // "hi I am PrimO a Stoftware enginnier HHHHAhahha"
+        String sConcatinated = s.concat(" stope laughing"); // could use. '+' 
+        String sUpper = s.toUpperCase(); // or toLowerCase()
+
+        System.out.println("sTrimed Identity HashCodes: "+ System.identityHashCode(sTrimed));
+        System.out.println("sConcatinated Identity HashCodes: "+ System.identityHashCode(sConcatinated));
+        System.out.println("sUpper Identity HashCodes: "+ System.identityHashCode(sUpper));
+
+        // we also able to reassing the string reference  
+        System.out.println("old s Identity HashCodes: "+ System.identityHashCode(s));
+        s = s.replace("","\s+");
+        System.out.println("new s Identity HashCodes: "+ System.identityHashCode(s));
+
     }
 
     
